@@ -161,6 +161,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void onButtonClick_percent(View view){
+        TextView textView = findViewById(R.id.textView1);
+        String a = "" + textView.getText().toString().charAt(textView.getText().length()-1);
+        if(!(a.equals(".") || a.equals("+") || a.equals("-") || a.equals("x") || a.equals("÷"))){
+            textView.setText(textView.getText().toString()+"%");
+        }
+    }
+
     public void onButtonClick_den(View view) {
         TextView textView =findViewById(R.id.textView1);
         String infix ="";  //中缀表达式
@@ -218,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         while(!stack.isEmpty()) { //所有运算符出栈
-            postfix.append(stack.pop());  //添加到postfix串之后
+            postfix.append(stack.pop());  //添加到postfix串之后  
         }
         return postfix;
     }
