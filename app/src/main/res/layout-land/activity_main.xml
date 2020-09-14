@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_weight="3"
+            android:gravity="right|center_vertical"
+            android:text="@string/text_result"
+
+            android:textColor="@color/darkblue"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+
+            />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textView1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:columnCount="4"
+            android:rowCount="7"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+            <Button
+                android:layout_columnSpan="2"
+                android:layout_gravity="fill"
+                android:text="←"
+                android:onClick="onButtonClick_back"
+                android:textSize="30dp"/>
+
+            <Button
+
+                android:layout_gravity="fill"
+                android:layout_columnSpan="2"
+                android:layout_rowSpan="1"
+                android:text="CE"
+                android:onClick="onButtonClick_clear"
+                android:textSize="30dp"/>
+
+            <Button android:text="1/X"
+                android:textSize="30dp"/>
+
+            <Button android:text="x²"
+                android:textSize="30dp"/>
+
+            <Button android:text="√X"
+                android:textSize="30dp"/>
+
+
+            <Button
+                android:layout_gravity="fill"
+                android:text="@string/btn_add"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_add"/>
+
+            <Button android:text="@string/btn_7"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_7"/>
+
+            <Button android:text="@string/btn_8"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_8"/>
+
+            <Button android:text="@string/btn_9"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_9"/>
+
+
+            <Button
+                android:layout_gravity="fill"
+                android:text="@string/btn_sub"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_sub"/>
+
+            <Button android:text="@string/btn_6"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_6"/>
+
+            <Button android:text="@string/btn_5"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_5"/>
+
+            <Button android:text="@string/btn_4"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_4"/>
+
+
+            <Button
+                android:layout_gravity="fill"
+                android:text="@string/btn_mul"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_mul"/>
+
+            <Button android:text="@string/btn_1"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_1"/>
+
+            <Button android:text="@string/btn_2"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_2"/>
+
+            <Button android:text="@string/btn_3"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_3"/>
+
+            <Button
+                android:layout_gravity="fill"
+                android:text="@string/btn_divide"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_divide"/>
+
+            <Button android:text="@string/btn_0"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_0"/>
+
+            <Button android:text="@string/btn_00"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_00"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:text="@string/btn_point"
+                android:textSize="30dp"
+                android:onClick="onButtonClick_point"/>
+
+
+            <Button
+                android:layout_gravity="fill"
+                android:text="="
+                android:textSize="30dp"
+                android:onClick="onButtonClick_den"/>
+
+
+        </GridLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
