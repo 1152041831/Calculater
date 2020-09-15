@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Help_page">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="如何使用计算器"
+       android:textSize="40dp"
+        android:textColor="@color/darkblue"/>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView2"
+        android:text="\n1.首先要弄懂基本键操作，C键清除所以寄存器中的数值，M+把目标显示数值放在寄存器中，M-键从存储器内容中减去当前值。
+\n\n2.求百分比，例如120的23%，得到27.6；求比率，例如“18比150的百分率是27”。\n
+\n3.求混合运算，例如“5.45*2+4.7*3=25”。"
+        android:textSize="20dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

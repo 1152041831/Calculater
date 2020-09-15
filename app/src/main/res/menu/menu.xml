@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="计算器" android:id="@+id/Calculator"/>
+    <item android:title="长度换算" android:id="@+id/Length_conversion"/>
+    <item android:title="进制转换" android:id="@+id/Base_conversion"/>
+    <item android:title="帮助" android:id="@+id/help"/>
+    <item android:title="退出" android:id="@+id/exit"/>
+
+</menu>

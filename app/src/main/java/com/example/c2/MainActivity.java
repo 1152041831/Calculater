@@ -2,10 +2,16 @@ package com.example.c2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.math.BigDecimal;
 
@@ -16,16 +22,55 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    //加载菜单
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    //菜单事件
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        switch(id){
+            case R.id.Calculator:
+                Toast.makeText(this,item.getTitle(),Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.Base_conversion:
+                Intent intent = new Intent(MainActivity.this, Base_conversion.class);
+                startActivity(intent);
+                Toast.makeText(this,item.getTitle(),Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.Length_conversion:
+                Intent intent2 = new Intent(MainActivity.this, Length_conversion.class);
+                startActivity(intent2);
+                Toast.makeText(this,item.getTitle(),Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.help:
+                Intent intent3 = new Intent(MainActivity.this, Help_page.class);
+                startActivity(intent3);
+                Toast.makeText(this,item.getTitle(),Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.exit:
+                System.exit(0);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    //按钮
     public void onButtonClick_1(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("1");
         }else{
             textView.setText(textView.getText().toString()+"1");
         }
     }
+
     public void onButtonClick_2(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("2");
         }else{
@@ -33,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onButtonClick_3(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("3");
         }else{
@@ -42,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onButtonClick_4(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("4");
         }else{
@@ -50,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onButtonClick_5(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("5");
         }else{
@@ -58,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onButtonClick_6(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("6");
         }else{
@@ -66,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onButtonClick_7(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("7");
         }else{
@@ -74,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onButtonClick_8(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("8");
         }else{
@@ -82,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onButtonClick_9(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")){
             textView.setText("9");
         }else{
@@ -91,21 +136,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick_0(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")==false){
             textView.setText(textView.getText().toString()+"0");
         }
     }
 
     public void onButtonClick_00(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(textView.getText().equals("0")==false){
             textView.setText(textView.getText().toString()+"00");
         }
     }
 
     public void onButtonClick_add(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         String a = "" + textView.getText().toString().charAt(textView.getText().length()-1);
         if(!(a.equals("÷") || a.equals("x") || a.equals("+") || a.equals("-"))){
             textView.setText(textView.getText().toString()+"+");
@@ -113,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick_sub(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         String a = "" + textView.getText().toString().charAt(textView.getText().length()-1);
         if(!(a.equals("÷") || a.equals("x") || a.equals("+") || a.equals("-"))){
             textView.setText(textView.getText().toString()+"-");
@@ -121,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick_mul(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         String a = "" + textView.getText().toString().charAt(textView.getText().length()-1);
         if(!(a.equals("÷") || a.equals("x") || a.equals("+") || a.equals("-"))){
             textView.setText(textView.getText().toString()+"x");
@@ -129,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick_divide(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         String a = "" + textView.getText().toString().charAt(textView.getText().length()-1);
         if(!(a.equals("÷") || a.equals("x") || a.equals("+") || a.equals("-"))){
             textView.setText(textView.getText().toString()+"÷");
@@ -137,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick_point(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         String a = "" + textView.getText().toString().charAt(textView.getText().length()-1);
         if(a.equals(".")==false && a.equals("+")==false && a.equals("-")==false && a.equals("x")==false && a.equals("÷")==false ){
             textView.setText(textView.getText().toString()+".");
@@ -145,13 +190,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onButtonClick_Left_bracket(View view){
+        TextView textView =findViewById(R.id.textView);
+        textView.setText("(");
+    }
+
+    public void onButtonClick_Right_bracket(View view){
+        TextView textView =findViewById(R.id.textView);
+        textView.setText(")");
+    }
+
     public void onButtonClick_clear(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         textView.setText("0");
     }
 
     public void onButtonClick_back(View view){
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         if(!textView.toString().equals("0")){
             String currentText = textView.getText().toString();  //获取当前文本编辑框的内容
             if (TextUtils.isEmpty(textView.getText())) { //如果textView中文本为空，不进行操作
@@ -162,21 +217,75 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick_percent(View view){
-        TextView textView = findViewById(R.id.textView1);
+        TextView textView = findViewById(R.id.textView);
         String a = "" + textView.getText().toString().charAt(textView.getText().length()-1);
         if(!(a.equals(".") || a.equals("+") || a.equals("-") || a.equals("x") || a.equals("÷"))){
             textView.setText(textView.getText().toString()+"%");
         }
     }
 
+    public void onButtonClick_e(View view){
+        TextView textView = findViewById(R.id.textView);
+        textView.setText("2.718281");
+    }
+
+    public void onButtoClick_π(View view){
+        TextView textView = findViewById(R.id.textView);
+        textView.setText("3.141592");
+    }
+
+    public void onButtoClick_percent(View view){
+        TextView textView = findViewById(R.id.textView);
+        textView.setText("%");
+    }
+
+
+    public void onClickedPower(View view) {
+        TextView textView = (TextView)findViewById(R.id.textView);
+        switch(view.getId()) {
+            case R.id.power_1:
+                String str =textView.getText().toString();
+                int flag = 0 ;
+                int flag1 = 0;
+                for(int i = str.length()-1; i>=0;i--){
+                    if(str.charAt(i)!='.' && (str.charAt(i)<'0' || str.charAt(i)>'9') ){
+                        flag=i+1;
+                        textView.setText(str.substring(0,flag) +"(1÷"+str.substring(flag,str.length())+")");
+                        flag1=1;
+                        break;
+                    }
+                }
+                if(flag1==0){
+                    textView.setText("(1÷"+str.substring(0,str.length())+")");
+
+                }                break;
+            case R.id.power_2:
+                textView.setText(textView.getText().toString()+"^(2)");
+                break;
+            case R.id.power_3:
+                textView.setText(textView.getText().toString()+"^(0.5)");
+                break;
+            case R.id.power_4:
+                textView.setText(textView.getText().toString()+"^(3)");
+                break;
+            case R.id.power_5:
+                textView.setText(textView.getText().toString()+"^");//未完成
+                break;
+        }
+    }
+
     public void onButtonClick_den(View view) {
-        TextView textView =findViewById(R.id.textView1);
+        TextView textView =findViewById(R.id.textView);
         String infix ="";  //中缀表达式
         infix = textView.getText().toString();
         StringBuffer postfix = InfixToPostfix(infix);
         double result = PostfixToValue(postfix);
         textView.setText(""+result);
     }
+
+
+
+
     //将infix中缀表达式转换成postfix后缀表达式
     static StringBuffer InfixToPostfix(String infix) {
 
@@ -215,8 +324,27 @@ public class MainActivity extends AppCompatActivity {
                     stack.push(ch+"");
                     i++; break;
 
+                case '^':  //遇到^运算符
+                    while(!stack.isEmpty() && stack.peek().equals("^")) {
+                        postfix.append(stack.pop());   //栈顶优先级高的运算符出栈
+                    }
+                    stack.push(ch+"");
+                    i++; break;
+
+                case '(':  //遇到左括号，入栈
+                    stack.push(ch+"");
+                    i++; break;
+
+                case ')':  //遇到右括号，出栈，若栈空返回null
+                    String out = stack.pop();
+                    while(out!=null && !out.equals("(")) {  //直到出栈运算符为左括号
+                        postfix.append(out);
+                        out = stack.pop();
+                    }
+                    i++; break;
+
                 default :  //遇到数字，添加到后缀表达式
-                    while(i<infix.length() && ((ch>='0' && ch <='9') || ch == '.')) {
+                    while(i<infix.length() && ((ch>='0' && ch <='9') || ch == '.' || ch == '-')) {
                         postfix.append(ch);
                         i++;
                         if(i<infix.length())
@@ -226,20 +354,19 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         while(!stack.isEmpty()) { //所有运算符出栈
-            postfix.append(stack.pop());  //添加到postfix串之后  
+            postfix.append(stack.pop());  //添加到postfix串之后
         }
         return postfix;
     }
-
     //计算后缀表达式的值
     public static double PostfixToValue(StringBuffer postfix) {
         SeqStack<Double> stack = new SeqStack<Double>();  //操作数栈（顺序）
         double value = 0;
         String str = "";
 
-        for(int i = 00; i < postfix.length(); i++) {  //逐个检查后缀表达式中的字符
+        for(int i = 0; i < postfix.length(); i++) {  //逐个检查后缀表达式中的字符
             char ch = postfix.charAt(i);
-            if((ch >= '0' && ch <= '9') || ch == '.') {  //遇到数字字符
+            if((ch >= '0' && ch <= '9') || ch == '.'|| ch == '-') {  //遇到数字字符
                 value = 0;
                 while(ch != ' ') {  //将字符串转化为double值
                     str += ch;
@@ -258,17 +385,42 @@ public class MainActivity extends AppCompatActivity {
                     case '+':value = (X.add(Y)).doubleValue(); break;
                     case '-':value = (X.subtract(Y)).doubleValue(); break;
                     case 'x':value = (X.multiply(Y)).doubleValue(); break;
-                    case '÷':value = (X.divide(Y)).doubleValue(); break;
+                    case '÷':value = (X.divide(Y,6,BigDecimal.ROUND_HALF_UP)).doubleValue(); break;
+                    case '^':value = Math.pow(x, y); break;
                 }
 
 
+                value = Double.parseDouble(String.format("%.6f", value));
+                
                 stack.push(value);  //运算结果入栈
             }
         }
         return stack.pop();  //返回运算结果
     }
 
+    public void Trigonometric(View view){
+        TextView textView = (TextView)findViewById(R.id.textView);
+        float radians = (float)Math.toRadians(Double.parseDouble(textView.toString()));
+        double result =0;
+
+        switch (view.getId()){
+            case R.id.btn_sin:
+                result = Math.sin(radians);
+                break;
+            case R.id.btn_cos:
+                result = Math.cos(radians);
+                break;
+            case R.id.btn_tan:
+                result = Math.tan(radians);
+    }
+    textView.setText(""+result);
+
+
 }
+
+}
+
+
 class SeqList<T> extends Object {
     protected Object[] element; //对象数组存储顺序表的数据元素，保护成员
     protected int n;  //顺序表元素个数（长度）
@@ -395,6 +547,12 @@ class SeqStack<T> {
     public T pop() {
         return list.remove(list.size() - 1);
     }
+}
+
+class Constant {
+    public static int displayWidth;  //屏幕宽度
+    public static int displayHeight; //屏幕高度
+
 }
 
 
