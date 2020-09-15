@@ -17,6 +17,8 @@ import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Math Logarithm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -400,7 +402,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Trigonometric(View view){
         TextView textView = (TextView)findViewById(R.id.textView);
-        float radians = (float)Math.toRadians(Double.parseDouble(textView.toString()));
+        Double radians = Math.toRadians(Double.parseDouble(textView.getText().toString()));
         double result =0;
 
         switch (view.getId()){
@@ -412,11 +414,31 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_tan:
                 result = Math.tan(radians);
+                break;
     }
     textView.setText(""+result);
 
 
-}
+    }
+    public void Logarithm(View view){
+        TextView textView = (TextView)findViewById(R.id.textView);
+        Double radians =Double.parseDouble(textView.getText().toString());
+        double result =0;
+
+        switch (view.getId()){
+            case R.id. btn_log:
+                result = Math.log10(radians);
+                break;
+            case R.id.btn_ln:
+                result = Math.log(radians);
+                break;
+        }
+        textView.setText(""+result);
+
+
+    }
+
+
 
 }
 

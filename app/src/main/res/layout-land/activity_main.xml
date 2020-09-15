@@ -217,7 +217,9 @@
                 android:text="Lg"
                 android:textAllCaps="false"
                 android:layout_gravity="fill"
-                android:textColor="#03A9F4" />
+                android:textColor="#03A9F4"
+                android:onClick="Logarithm"
+                />
 
 
 
@@ -258,7 +260,8 @@
                 android:text="Ln"
                 android:textAllCaps="false"
                 android:layout_gravity="fill"
-                android:textColor="#03A9F4" />
+                android:textColor="#03A9F4"
+                android:onClick="Logarithm"/>
 
             <Button
                 android:layout_width="wrap_content"
