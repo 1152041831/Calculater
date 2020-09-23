@@ -24,15 +24,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-    //加载菜单
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
         return true;
     }
-
-    //菜单事件
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
         switch(id){

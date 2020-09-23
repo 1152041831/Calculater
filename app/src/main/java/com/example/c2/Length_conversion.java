@@ -26,19 +26,16 @@ public class Length_conversion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_length_conversion);
 
-        //加载单位菜单
         Spinner spinner1 = (Spinner)findViewById(R.id.spLength);
         final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.danwei,android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
 
-        //加载单位菜单
         Spinner spinner2 = (Spinner)findViewById(R.id.spLength1);
         final ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.danwei,android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
 
-        //加载计算器控件
         final TextView txt = findViewById(R.id.edit11);
         final TextView result = findViewById(R.id.edit22);
         GridLayout gridLayout = findViewById(R.id.gridLayout1);
@@ -52,7 +49,6 @@ public class Length_conversion extends AppCompatActivity {
             });
         }
 
-        //下拉列表选择事件监听
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

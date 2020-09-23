@@ -20,19 +20,16 @@ public class Base_conversion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_conversion);
 
-        //加载下拉列表1
         Spinner spinner1 = (Spinner)findViewById(R.id.spSystem);
         final ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.jinzhi,android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
 
-        //加载下拉列表2
         Spinner spinner2 = (Spinner)findViewById(R.id.spSystem1);
         final ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.jinzhi,android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
 
-        //加载计算器控件
         final TextView txt = findViewById(R.id.edit1);
         final TextView result = findViewById(R.id.edit2);
         GridLayout gridLayout = findViewById(R.id.gridLayout);
@@ -45,8 +42,6 @@ public class Base_conversion extends AppCompatActivity {
                 }
             });
         }
-
-        //获取按钮
         final Button zero = (Button)findViewById(R.id.bt_0);
         final Button one = (Button)findViewById(R.id.bt_1);
         final Button two = (Button)findViewById(R.id.bt_2);
@@ -171,8 +166,6 @@ public class Base_conversion extends AppCompatActivity {
         }
     }
 
-
-    //进制转换
     public static String a2to8(String a){
         return Integer.toOctalString(Integer.parseInt(a, 2))+"";
     }
@@ -206,6 +199,5 @@ public class Base_conversion extends AppCompatActivity {
     public static String a16to8(String a){
         return Integer.toOctalString(Integer.parseInt(a,16));
     }
-    public static String a16to10(String a){ return Integer.toString(Integer.parseInt(a,16))+"";
-    }
+    public static String a16to10(String a){ return Integer.toString(Integer.parseInt(a,16))+""; }
 }
