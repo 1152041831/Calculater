@@ -185,7 +185,6 @@ public class MainActivity extends AppCompatActivity {
         if(a.equals(".")==false && a.equals("+")==false && a.equals("-")==false && a.equals("x")==false && a.equals("÷")==false ){
             textView.setText(textView.getText().toString()+".");
         }
-
     }
 
     public void onButtonClick_Left_bracket(View view){
